@@ -1,0 +1,80 @@
+{%extends 'main.html'%}
+
+
+{% block content%}
+
+<!-- ---------------------Member View only----------------- -->
+{%if page == 'Idview'%}
+
+<form action="" >
+  <div class="centered-form">
+    <div class="card">
+        <div class="top-right image-container">
+            <img src="{{project.profile_pic.url}}" alt="" class="profile-pic">
+        </div>
+        <div class="heading-box" >
+        <h1> {{name}} Registration Form</h1>
+      </div>
+        <br>
+      
+      <div class="form__field">
+        <!-- <label for="formInput#text">{{item.label}}</label> -->
+        
+       
+        {{form.as_p}}
+        <br>
+        <br>
+        
+        {%for error in form.errors %}
+        <p style="color: red;">{{error}}</p>
+        {%endfor%}
+      
+      </div>
+        
+      <div>
+        <a href="{%url 'home'%}"><input type="button" class="cancel-button" value="Back"></a>
+      </div>
+      
+    </form>
+
+
+    <!-- -------------------  Member update code--------------------- -->
+    {% else %}
+
+<form action="" method="POST" enctype="multipart/form-data">
+  {%csrf_token%}   
+  <div class="centered-form">
+    <div class="card">
+        <div class="top-right image-container">
+            <img src="{{project.profile_pic.url}}" alt="" class="profile-pic" >
+        </div>
+          <div class="heading-box" >
+            <h1> {{name}} Registration Form</h1>
+          </div>
+        <br>
+      
+      <div class="form__field">
+        <!-- <label for="formInput#text">{{item.label}}</label> -->
+        
+         {{form.as_p}}
+        <br>
+        <br>
+        
+        {%for error in form.errors %}
+        <p style="color: red;">{{error}}</p>
+        {%endfor%}
+      
+      </div>
+        
+      <div>
+        <a href="{%url 'home'%}"><input type="submit" value="Update" style="color: rgb(236, 247, 247);background-color: rgb(18, 228, 113);"></a> 
+        <a href="{%url 'home'%}"><input type="button" value="Back" style="color: aliceblue;background-color: blue;"></a>
+      </div>
+      
+    </form>
+    {% endif %}
+  </div> 
+</div> 
+
+
+{% endblock content%}

@@ -1,0 +1,53 @@
+{%extends 'main.html'%}
+
+
+{% block content%}
+
+
+<form action="" method="POST" enctype="multipart/form-data">
+    {%csrf_token%}   
+    <div class="centered-form">
+      <div class="card">
+          
+            <div class="heading-box" >
+              <h1> User Login Form</h1>
+            </div>
+          <br>
+         
+          
+          {% for field in form %}
+
+        <div class="form__field">
+          <label for="formInput#text">{{field.label}}</label>
+          
+           {{field}}
+          <br>
+          <br>
+          <div class="form__field">
+          {% for error in field.errors %}
+          <p style="color: red;">{{error}}</p>
+        </div>
+          {%endfor%} 
+
+        
+        </div>
+        {%endfor%}
+        
+        {% if messages %}
+        <div class="form__field">
+          {% for message in messages %}
+            <p style="color: red;">{{ message }}</p>
+          {% endfor %}
+        
+        </div>
+        {% endif %}
+        <div>
+          <a href="{%url 'home'%}"><input type="submit" value="Login" style="color: rgb(236, 247, 247);background-color: rgb(18, 228, 113);"></a> 
+          
+        </div>
+        </div>
+      </div>
+    </div>
+      </form>
+
+      {% endblock content%}

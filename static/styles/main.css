@@ -1,0 +1,115 @@
+
+
+.bordered-content {
+  border: 2px solid #ccc;
+  padding: 10px;
+}
+
+.center-text {
+  text-align: center;
+}
+  .centered-form {
+    background-color: rgb(121, 129, 127);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Optional: To center vertically within the viewport */
+  }
+  .card {
+    background-color: rgb(243, 198, 144);
+    max-width: 800px; /* Adjust the maximum width as needed */
+    padding: 20px;
+    margin: 0 auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-height: 80vh; /* Set a maximum height for the card */
+    overflow-y: auto; /* Add vertical scroll if needed */
+  }
+  .form__field {
+    margin-bottom: 1px;
+  }
+
+  .image-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 150px; /* Adjust the width as needed */
+    height: 150px; /* Adjust the height as needed */
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+   .container{
+    
+      margin-top: 20px;
+   }
+
+   .top-right {
+    position: absolute;
+    top: 95px; /* Adjust the top position as needed */
+    right: 10px; /* Adjust the right position as needed */
+}
+
+.profile-pic {
+    max-width: 150px; /* Adjust the maximum width as needed */
+    max-height: 150px; /* Adjust the maximum height as needed */
+}
+.heading-box {
+  background-color: rgba(231, 9, 9, 0.205);
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 3px 3px 5px 0 rgba(110, 156, 241, 0.2);
+  text-align: center;
+}
+.heading-box h1 {
+  font-size: 24px;
+  color: #333;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+
+.body {
+  font-family: Arial, sans-serif;
+}
+
+.delete-confirmation {
+  width: 400px;
+  margin: 50px auto;
+  text-align: center;
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+h2 {
+  color: #333;
+}
+
+p {
+  color: #666;
+}
+
+.delete-button, .cancel-button {
+  padding: 10px 20px;
+  margin: 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.delete-button {
+  background-color: #f44336;
+  color: white;
+}
+
+.cancel-button {
+  background-color: #3498db;
+  color: white;
+}
+
+.delete-button:hover, .cancel-button:hover {
+  opacity: 0.8;
+}

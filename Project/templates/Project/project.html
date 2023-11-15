@@ -1,0 +1,78 @@
+{%extends 'main.html'%}
+
+{% block content %}
+
+<!-- <table>
+        <head>
+        <th>Name</th>
+        <th>Gender</th>
+        <th>Subscription</th>
+        <th>Joined Date</th>
+        <th>Remaining Days</th>
+    </head>
+    
+    
+        {% for items in project %}
+            <tr>
+                <td>{{ items.field.f_name }} {{ items.field.l_name }}</td>
+                <td>{{ items.field.sex }}</td>
+                <td>{{ items.field.package_selected }}</td>
+                <td>{{ items.field.date_joined }}</td>
+                <td>{{ items.remaining_days}}</td>
+            </tr>
+        {% endfor %}
+     -->
+    
+
+     <!-- </table> -->
+
+
+
+
+
+<div class="bordered-content">     
+  <style>
+  .center-text {
+      text-align: center;
+  }
+  </style>
+  <p style="color: blueviolet;font-size:large; font-style: italic;">Total members: {{member}}</p>
+
+  <table class="table table-dark table-striped-columns ">
+    <thead>
+      <tr>
+        <!-- <th scope="col">#</th> -->
+        <th class="center-text" scope="col">Name</th>
+        <th class="center-text"scope="col">Gender</th>
+        <th class="center-text"scope="col">Subscription</th>
+        <th class="center-text"scope="col">Joined Date</th>
+        <th class="center-text"scope="col"> Membership Expiration In</th>
+        <th class="center-text"scope="col">Payment Status</th>
+        <th class="center-text"scope="col">View Member Profile</th>
+        <th class="center-text"scope="col">Update Member Profile</th>
+        <th class="center-text"scope="col">Remove Member Profile</th>
+
+      </tr>
+    </thead>
+    <tbody>
+
+      
+        {% for items in project %}
+      <tr>
+        <!-- <th scope="row">1</th> -->
+        <td class="center-text">{{ items.field.f_name }} {{ items.field.l_name }}</td>
+                <td class="center-text">{{ items.field.sex }}</td>
+                <td class="center-text" >{{ items.field.package_selected }}</td>
+                <td class="center-text">{{ items.field.date_joined }}</td>
+                <td class="center-text">{{ items.remaining_days}} Days</td>
+                <td class="center-text">{{ items.field.payment}}</td>
+                <td class="center-text"><button type="button" class="btn btn-outline-info"><a href="{%url 'project-view' items.field.id %}">View</button></td></a>
+                <td class="center-text"><button type="button" class="btn btn-outline-success"><a href="{%url 'project-edit' items.field.id %}">Edit</button></td></a>
+                <td class="center-text"><button type="button" class="btn btn-danger"><a href="{%url 'project-delete' items.field.id %}">Delete</button></td></a>        -->
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div> 
+
+{% endblock content %}

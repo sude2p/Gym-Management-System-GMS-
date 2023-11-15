@@ -1,0 +1,26 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title</title>
+</head>
+<div class="bordered-content">
+  <body>
+    {% load static%}
+    {% if request.user.is_authenticated %}
+    <nav class="navbar bg-primary" data-bs-theme="dark">
+        <div class="container-fluid">
+          
+          <a class="navbar-brand" href="{%url 'project-create'%}">Add Member</a>
+          <a class="navbar-brand " href="{%url 'home'%}"style="margin-left: -1300px;">Home</a>
+          <a class="navbar-brand" href="{%url 'logout'%}"style="">Logout</a>
+          
+          </div>
+          
+        </div>
+      </nav>
+      {%endif%}
+      
+  </body>
+</div>
+</html>
